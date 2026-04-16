@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
         hostname: "pub-a138722f99774b24bde1c2c94a389145.r2.dev",
       },
     ],
+    qualities: [75, 85, 90],
   },
 };
 

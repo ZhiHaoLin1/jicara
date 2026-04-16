@@ -28,10 +28,10 @@ export default function Navbar() {
       {/* Desktop links */}
       <ul className="hidden md:flex gap-9 list-none">
         {[
-          ["Nuestra Historia", "#story"],
-          ["Menú", "#menu"],
-          ["Events", "#events"],
-          ["Contact", "#contact"],
+          ["Nuestra Historia", "/#story"],
+          ["Menú", "/#menu"],
+          ["Events", "/#events"],
+          ["Contact", "/contact"],
         ].map(([label, href]) => (
           <li key={href}>
             <a
@@ -45,7 +45,7 @@ export default function Navbar() {
       </ul>
 
       <a
-        href="#reservations"
+        href="/reservations"
         className="hidden md:inline-block font-dm text-[11px] tracking-[0.18em] uppercase bg-clay text-straw px-5 py-2.5 hover:bg-sienna transition-colors"
       >
         Reserve
@@ -53,24 +53,27 @@ export default function Navbar() {
 
       {/* Mobile hamburger */}
       <button
-        className="md:hidden flex flex-col gap-1.5 p-1"
+        className="md:hidden flex flex-col gap-[5px] p-2 -mr-2"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle menu"
       >
-        <span className="w-6 h-px bg-ink block" />
-        <span className="w-6 h-px bg-ink block" />
-        <span className="w-6 h-px bg-ink block" />
+        <span className="w-6 h-0.5 bg-ink block rounded-sm" />
+        <span className="w-6 h-0.5 bg-ink block rounded-sm" />
+        <span className="w-6 h-0.5 bg-ink block rounded-sm" />
       </button>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-paper/97 border-b border-clay/20 px-8 py-6 flex flex-col gap-5 md:hidden">
+        <div
+          className="absolute top-full left-0 right-0 border-b border-clay/20 px-8 py-6 flex flex-col gap-5 md:hidden"
+          style={{ backgroundColor: "#EFE3CC" }}
+        >
           {[
-            ["Nuestra Historia", "#story"],
-            ["Menú", "#menu"],
-            ["Events", "#events"],
-            ["Contact", "#contact"],
-            ["Reserve", "#reservations"],
+            ["Nuestra Historia", "/#story"],
+            ["Menú", "/#menu"],
+            ["Events", "/#events"],
+            ["Contact", "/contact"],
+            ["Reserve", "/reservations"],
           ].map(([label, href]) => (
             <a
               key={href}

@@ -13,7 +13,7 @@ const anim = (delay = 0) => ({
 
 export default function Hero() {
   return (
-    <section className="min-h-screen grid md:grid-cols-2 gap-10 items-center px-8 md:px-12 pt-28 pb-20 relative overflow-hidden">
+    <section className="grid md:grid-cols-[1fr_1.4fr] gap-10 items-start px-8 md:px-12 pt-28 pb-16 relative overflow-hidden">
       {/* Warm sunlight wash */}
       <div
         className="absolute -top-24 -right-24 w-[600px] h-[600px] rounded-full pointer-events-none"
@@ -54,7 +54,7 @@ export default function Hero() {
             View Menu
           </a>
           <a
-            href="#reservations"
+            href="/reservations"
             className="font-dm text-[11px] tracking-[0.2em] uppercase text-ink px-7 py-3.5 border border-ink/30 hover:border-ink transition-all"
           >
             Reserve a Table
@@ -62,33 +62,38 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Right: Photo — desktop */}
+      {/* Right: Framed photo — desktop */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease, delay: 0.45 }}
-        className="hidden md:block relative"
+        className="hidden md:flex items-start justify-center relative pt-4"
       >
-        <div className="relative w-full max-w-[480px] mx-auto">
+        <div className="relative w-full">
+          {/* Offset shadow frame */}
           <div className="absolute bottom-[-14px] right-[-14px] left-[14px] top-[14px] border border-clay/30 z-0" />
+          {/* Corner bracket */}
           <div className="absolute top-[-8px] left-[-8px] w-8 h-8 border-t-2 border-l-2 border-clay opacity-60 z-10" />
-          <div className="relative w-full aspect-[3/4] overflow-hidden z-10">
+
+          {/* Image */}
+          <div className="relative w-full aspect-[4/3] overflow-hidden z-10">
             <Image
               src="https://pub-a138722f99774b24bde1c2c94a389145.r2.dev/hero.jpeg"
               alt="Jícara taquería — wood-fired tacos Orlando FL"
               fill
               priority
-              className="object-cover"
-              sizes="(max-width: 768px) 0px, (max-width: 1280px) 45vw, 560px"
+              quality={90}
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 0px, (max-width: 1280px) 58vw, 900px"
             />
           </div>
-          {/* Spinning badge */}
-          <div className="absolute bottom-10 left-[-28px] w-24 h-24 bg-clay rounded-full flex items-center justify-center animate-spin-slow z-20">
-            <div className="animate-counterspin flex flex-col items-center text-center gap-0.5">
-              <span className="font-dm text-[8px] tracking-[0.18em] uppercase text-straw opacity-80">Est.</span>
-              <span className="font-fraunces font-black text-xl text-straw leading-none">2024</span>
-              <span className="font-dm text-[8px] tracking-[0.18em] uppercase text-straw opacity-80">Orlando</span>
-            </div>
+
+          {/* Stamp label below image */}
+          <div className="flex items-center gap-3 mt-4 justify-end pr-1">
+            <span className="w-8 h-px bg-clay opacity-40" />
+            <span className="font-dm text-[10px] tracking-[0.28em] uppercase text-sepia opacity-70">
+              Est. 2024 · Orlando, FL
+            </span>
           </div>
         </div>
       </motion.div>
@@ -100,8 +105,9 @@ export default function Hero() {
           alt="Jícara taquería — wood-fired tacos Orlando FL"
           fill
           priority
-          className="object-cover"
-          sizes="(max-width: 768px) calc(100vw - 64px), 0px"
+          quality={85}
+          className="object-cover object-center"
+          sizes="calc(100vw - 64px)"
         />
       </div>
     </section>

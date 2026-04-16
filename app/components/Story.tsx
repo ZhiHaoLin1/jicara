@@ -25,10 +25,10 @@ export default function Story() {
         {/* Main image */}
         <div className="relative w-full aspect-[4/5] overflow-hidden z-10">
           <Image
-            src="https://pub-a138722f99774b24bde1c2c94a389145.r2.dev/tortilla%20press.jpeg"
+            src="https://pub-a138722f99774b24bde1c2c94a389145.r2.dev/tortilla%20press1.jpeg"
             alt="Hand-pressing tortillas on a traditional comal — Jícara Orlando"
             fill
-            className="object-cover"
+            className="object-cover object-[center_60%]"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>

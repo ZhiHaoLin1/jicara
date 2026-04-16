@@ -6,8 +6,6 @@ import Menu from "./components/Menu";
 import Instagram from "./components/Instagram";
 import Info from "./components/Info";
 import MapSection from "./components/MapSection";
-import Reservations from "./components/Reservations";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -36,8 +34,6 @@ export default function Home() {
         <Instagram />
         <Info />
         <MapSection />
-        <Reservations />
-        <Contact />
       </main>
       <Footer />
     </>

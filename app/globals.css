@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@import "@fontsource-variable/fraunces/full.css";
+@import "@fontsource/lora/400.css";
+@import "@fontsource/lora/400-italic.css";
+@import "@fontsource/lora/500.css";
+@import "@fontsource/lora/500-italic.css";
+@import "@fontsource/dm-sans/300.css";
+@import "@fontsource/dm-sans/400.css";
+
+:root {
+  --paper:    #EFE3CC;
+  --straw:    #F8F1E3;
+  --plaster:  #E3D0B0;
+  --clay:     #C05828;
+  --sienna:   #983E14;
+  --sage:     #647E59;
+  --mustard:  #C49A28;
+  --ink:      #271506;
+  --sepia:    #7A5A38;
+  --cream-dk: #D9C8A8;
+
+  --font-fraunces: "Fraunces Variable", serif;
+  --font-lora:     "Lora", serif;
+  --font-dm-sans:  "DM Sans", sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-lora);
+  overflow-x: hidden;
+}
+
+/* Paper grain */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+}
+
+.zapotec-stripe {
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    #C05828 0px,  #C05828 8px,
+    #647E59 8px,  #647E59 16px,
+    #C49A28 16px, #C49A28 24px,
+    #C05828 24px, #C05828 32px
+  );
+  opacity: 0.7;
+}
+
+.linen-bg {
+  background-image:
+    repeating-linear-gradient(0deg,   transparent, transparent 3px, rgba(39,21,6,0.025) 3px, rgba(39,21,6,0.025) 4px),
+    repeating-linear-gradient(90deg,  transparent, transparent 3px, rgba(39,21,6,0.018) 3px, rgba(39,21,6,0.018) 4px);
+  background-color: #F8F1E3;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee      { animation: marquee 24s linear infinite; white-space: nowrap; display: inline-block; }
+.animate-marquee-slow { animation: marquee 34s linear infinite; white-space: nowrap; display: inline-block; }
+
+@keyframes badgespin    { from { transform: rotate(0deg);   } to { transform: rotate(360deg);  } }
+@keyframes badgecounter { from { transform: rotate(0deg);   } to { transform: rotate(-360deg); } }
+.animate-spin-slow   { animation: badgespin    12s linear infinite; }
+.animate-counterspin { animation: badgecounter 12s linear infinite; }

@@ -79,7 +79,7 @@ export default function Hero() {
               fill
               priority
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 768px) 0px, (max-width: 1280px) 45vw, 560px"
             />
           </div>
           {/* Spinning badge */}
@@ -101,7 +101,7 @@ export default function Hero() {
           fill
           priority
           className="object-cover"
-          sizes="100vw"
+          sizes="(max-width: 768px) calc(100vw - 64px), 0px"
         />
       </div>
     </section>

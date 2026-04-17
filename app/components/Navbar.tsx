@@ -53,13 +53,13 @@ export default function Navbar() {
 
       {/* Mobile hamburger */}
       <button
-        className="md:hidden flex flex-col gap-[5px] p-2 -mr-2"
+        className="md:hidden flex flex-col justify-center gap-[6px] p-2 -mr-2 cursor-pointer"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle menu"
       >
-        <span className="w-6 h-0.5 bg-ink block rounded-sm" />
-        <span className="w-6 h-0.5 bg-ink block rounded-sm" />
-        <span className="w-6 h-0.5 bg-ink block rounded-sm" />
+        <span style={{ display: "block", width: "24px", height: "2px", backgroundColor: "#271506", borderRadius: "2px" }} />
+        <span style={{ display: "block", width: "24px", height: "2px", backgroundColor: "#271506", borderRadius: "2px" }} />
+        <span style={{ display: "block", width: "24px", height: "2px", backgroundColor: "#271506", borderRadius: "2px" }} />
       </button>
 
       {/* Mobile menu */}
